@@ -130,6 +130,11 @@
         </div>
     </nav>
 
+    <!-- Authorized Distributor Badge -->
+    <div class="distributor-badge" id="distributor-badge">
+        Authorized Independent Youngevity Distributor — ID: <span id="distributor-id"></span>
+    </div>
+
     <!-- Hero Section -->
     <header class="hero" id="hero">
         <div class="hero-bg">
@@ -787,6 +792,41 @@
         </section>
     </main>
 
+    <!-- Contact a Health Coach Modal -->
+    <div class="modal-overlay" id="contact-modal-overlay">
+        <div class="modal glass-card" id="contact-modal">
+            <button class="modal-close" id="modal-close" aria-label="Close contact form">&times;</button>
+            <h3>Contact a Health Coach</h3>
+            <p class="modal-subtitle">Have questions about the GLP 30-Day System? Our certified health coaches are here to help.</p>
+            <form name="health-coach-contact" method="POST" data-netlify="true" class="contact-form">
+                <div class="form-group">
+                    <label for="contact-name">Your Name</label>
+                    <input type="text" id="contact-name" name="name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email Address</label>
+                    <input type="email" id="contact-email" name="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="contact-phone">Phone Number <span class="optional">(optional)</span></label>
+                    <input type="tel" id="contact-phone" name="phone" placeholder="(555) 123-4567">
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Your Message</label>
+                    <textarea id="contact-message" name="message" rows="4" required placeholder="Tell us about your health goals or questions..."></textarea>
+                </div>
+                <input type="hidden" name="sponsor-id" id="form-sponsor-id" value="">
+                <button type="submit" class="btn btn-primary btn-glow">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Contact Button -->
+    <button class="floating-contact-btn" id="open-contact-modal" aria-label="Contact a Health Coach">
+        <span class="contact-icon">💬</span>
+        <span class="contact-text">Talk to a Coach</span>
+    </button>
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -799,11 +839,24 @@
                     <a href="https://rootnotfruit.youngevity.com/media/catalog/product/attachment/GLP_Info_Sheets.pdf" target="_blank" rel="noopener">Complete Info Sheets (PDF)</a>
                 </div>
             </div>
+            <div class="footer-contact">
+                <h3>Get In Touch</h3>
+                <p class="footer-phone">📞 <a href="tel:8558352777">855.835.2777</a></p>
+                <button class="btn btn-outline footer-coach-btn" id="footer-contact-btn">Contact a Health Coach</button>
+            </div>
+            <div class="footer-legal">
+                <a href="#" class="legal-link" data-legal="privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+                <span class="legal-divider">|</span>
+                <a href="#" class="legal-link" data-legal="terms-of-use" target="_blank" rel="noopener">Terms of Use</a>
+                <span class="legal-divider">|</span>
+                <a href="#" class="legal-link" data-legal="youngevity-data-protection-policy" target="_blank" rel="noopener">Data Protection Policy</a>
+            </div>
             <div class="footer-disclaimer">
-                <p><strong>Disclaimer:</strong> *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Always consult with a qualified healthcare provider before starting any new supplement program, especially if you have existing health conditions or are taking medications.</p>
+                <p>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Always consult with a qualified healthcare provider before starting any new supplement program, especially if you have existing health conditions or are taking medications.</p>
             </div>
             <div class="footer-bottom">
                 <p>&copy; <span id="copyright-year"></span> Youngevity International, Inc. All rights reserved.</p>
+                <p class="footer-distributor">Authorized Independent Youngevity Distributor — ID: <span id="footer-distributor-id"></span></p>
             </div>
         </div>
     </footer>

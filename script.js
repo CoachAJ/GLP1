@@ -26,6 +26,13 @@
         'redirect': 'http://dailywithdoc.com/thank-you'
     };
 
+    const LEGAL_BASE = '.youngevity.com/us_en/';
+    const LEGAL_PAGES = {
+        'privacy-policy': 'privacy-policy',
+        'terms-of-use': 'terms-of-use',
+        'youngevity-data-protection-policy': 'youngevity-data-protection-policy'
+    };
+
     // ==========================================
     // SPONSOR / UID LOGIC
     // ==========================================
@@ -116,6 +123,92 @@
             navCta.setAttribute('target', '_blank');
             navCta.setAttribute('rel', 'noopener');
         }
+    }
+
+    // ==========================================
+    // DISTRIBUTOR ID DISPLAY
+    // ==========================================
+
+    /**
+     * Display the active sponsor ID in the distributor badge
+     * and in the footer distributor label.
+     */
+    function displayDistributorId() {
+        const sponsorId = getActiveSponsorId();
+
+        // Header badge
+        var badgeId = document.getElementById('distributor-id');
+        if (badgeId) {
+            badgeId.textContent = sponsorId;
+        }
+
+        // Footer
+        var footerId = document.getElementById('footer-distributor-id');
+        if (footerId) {
+            footerId.textContent = sponsorId;
+        }
+
+        // Hidden form field
+        var formSponsor = document.getElementById('form-sponsor-id');
+        if (formSponsor) {
+            formSponsor.value = sponsorId;
+        }
+    }
+
+    // ==========================================
+    // LEGAL LINKS (UID-based)
+    // ==========================================
+
+    /**
+     * Build legal page URLs using the active sponsor ID.
+     * Format: https://{sponsorId}.youngevity.com/us_en/{page}
+     */
+    function updateLegalLinks() {
+        var sponsorId = getActiveSponsorId();
+
+        document.querySelectorAll('.legal-link').forEach(function (link) {
+            var legalPage = link.getAttribute('data-legal');
+            if (legalPage && LEGAL_PAGES[legalPage]) {
+                link.href = 'https://' + sponsorId + LEGAL_BASE + LEGAL_PAGES[legalPage];
+            }
+        });
+    }
+
+    // ==========================================
+    // CONTACT MODAL
+    // ==========================================
+
+    function initContactModal() {
+        var overlay = document.getElementById('contact-modal-overlay');
+        var closeBtn = document.getElementById('modal-close');
+        var openBtn = document.getElementById('open-contact-modal');
+        var footerBtn = document.getElementById('footer-contact-btn');
+
+        function openModal() {
+            if (overlay) overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            if (overlay) overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (openBtn) openBtn.addEventListener('click', openModal);
+        if (footerBtn) footerBtn.addEventListener('click', openModal);
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+        // Close on overlay click (outside modal)
+        if (overlay) {
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) closeModal();
+            });
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeModal();
+        });
     }
 
     // ==========================================
@@ -247,11 +340,13 @@
                 const href = link.getAttribute('href');
                 if (!href) return;
 
-                // Skip anchors, checkout links, external links, and pdf links
+                // Skip anchors, checkout links, external links, pdf links, and legal links
                 if (href.startsWith('#') ||
                     href.includes('ygy1.com') ||
                     href.includes('.pdf') ||
-                    link.classList.contains('checkout-link')) {
+                    href.includes('youngevity.com') ||
+                    link.classList.contains('checkout-link') ||
+                    link.classList.contains('legal-link')) {
                     return;
                 }
 
@@ -270,6 +365,9 @@
 
     function init() {
         updateCheckoutLinks();
+        displayDistributorId();
+        updateLegalLinks();
+        initContactModal();
         initRevealAnimations();
         initMobileNav();
         initSmoothScroll();
@@ -286,3 +384,4 @@
     }
 
 })();
+
