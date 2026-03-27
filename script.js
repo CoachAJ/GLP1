@@ -23,7 +23,7 @@
         'item-1': 'USYG700|1',
         'destroy': '1',
         'ga_id': 'UA-20019232-44',
-        'redirect': 'thank-you.html'
+        'redirect': 'https://powerglp.com/thank-you.html'
     };
 
     const LEGAL_BASE = '.youngevity.com/us_en/';

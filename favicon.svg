@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C41E3A"/>
+      <stop offset="100%" style="stop-color:#D4A84B"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0a0a0f"/>
+  <text x="32" y="28" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="14" fill="#ffffff" letter-spacing="1">POWER</text>
+  <text x="32" y="48" text-anchor="middle" font-family="Arial Black,sans-serif" font-weight="900" font-size="18" fill="url(#g)" letter-spacing="2">GLP</text>
+</svg>
