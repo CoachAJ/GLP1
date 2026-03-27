@@ -10,6 +10,7 @@
     // APPROVED SPONSOR IDS (Database)
     // ==========================================
     const APPROVED_SPONSOR_IDS = [
+        '102742703',
         '101848575',
         '102707635',
         '102731242',
@@ -17,6 +18,16 @@
         '100506163',
         '102860986'
     ];
+
+    const SPONSOR_NAMES = {
+        '102742703': 'Coach AJ',
+        '101848575': 'Becca',
+        '102707635': 'Ruthellen',
+        '102731242': 'Sheri',
+        '102807573': 'Mary',
+        '100506163': 'Pharmacist Ben',
+        '102860986': 'Root'
+    };
 
     const CHECKOUT_BASE = 'https://ygy1.com/customer-checkout/v1.3/';
     const CHECKOUT_PARAMS = {
@@ -142,10 +153,11 @@
             badgeId.textContent = sponsorId;
         }
 
-        // Footer
+        // Footer — show name + ID
         var footerId = document.getElementById('footer-distributor-id');
         if (footerId) {
-            footerId.textContent = sponsorId;
+            var name = SPONSOR_NAMES[sponsorId] || '';
+            footerId.textContent = name ? name + ' — ' + sponsorId : sponsorId;
         }
 
         // Hidden form field

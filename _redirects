@@ -1,0 +1,15 @@
+# Vanity URLs — redirect to main page with UID parameter
+/AJ              /index.html?uid=102742703  200
+/aj              /index.html?uid=102742703  200
+/Becca           /index.html?uid=101848575  200
+/becca           /index.html?uid=101848575  200
+/Ruthellen       /index.html?uid=102707635  200
+/ruthellen       /index.html?uid=102707635  200
+/Sheri           /index.html?uid=102731242  200
+/sheri           /index.html?uid=102731242  200
+/Mary            /index.html?uid=102807573  200
+/mary            /index.html?uid=102807573  200
+/Ben             /index.html?uid=100506163  200
+/ben             /index.html?uid=100506163  200
+/Root            /index.html?uid=102860986  200
+/root            /index.html?uid=102860986  200
