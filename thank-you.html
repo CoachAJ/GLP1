@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! | Youngevity GLP 30-Day System</title>
+    <meta name="description" content="Thank you for your order! Get started with your Youngevity GLP 30-Day System and explore valuable health resources.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .ty-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 1rem 3rem;
+            background: radial-gradient(ellipse at center, rgba(46, 204, 113, 0.1) 0%, var(--c-bg-dark) 70%);
+        }
+        .ty-checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(46, 204, 113, 0.12);
+            border: 2px solid var(--c-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+            animation: pop-in 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes pop-in {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .ty-hero h1 {
+            margin-bottom: 1rem;
+        }
+        .ty-hero .lead {
+            margin: 0 auto 2rem;
+        }
+        .ty-next-steps {
+            background: var(--c-bg-card);
+            border: 1px solid var(--c-border);
+            border-radius: var(--r-lg);
+            padding: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .ty-next-steps h3 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .ty-next-steps ol {
+            list-style: none;
+            counter-reset: step;
+        }
+        .ty-next-steps li {
+            counter-increment: step;
+            padding: 0.6rem 0;
+            padding-left: 2.2rem;
+            position: relative;
+            color: var(--c-text-muted);
+            font-size: 0.92rem;
+            border-bottom: 1px solid var(--c-border);
+        }
+        .ty-next-steps li:last-child { border-bottom: none; }
+        .ty-next-steps li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--g-red);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--f-heading);
+        }
+
+        /* Resources Grid */
+        .resources-section {
+            padding: var(--s-section) 0;
+        }
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+        .resource-card {
+            background: var(--c-bg-card);
+            border: 1px solid var(--c-border);
+            border-radius: var(--r-lg);
+            padding: 1.5rem;
+            transition: all var(--t-normal);
+            text-decoration: none;
+            display: block;
+        }
+        .resource-card:hover {
+            background: var(--c-bg-card-hover);
+            border-color: var(--c-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+        .resource-card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+        .resource-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+            color: var(--c-white);
+        }
+        .resource-card p {
+            font-size: 0.85rem;
+            color: var(--c-text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+        .resource-card .resource-url {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--c-gold-dark);
+            margin-top: 0.6rem;
+        }
+
+        /* PDF Section */
+        .pdf-section {
+            padding: 0 0 var(--s-section);
+        }
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .pdf-card {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 1.2rem;
+            background: var(--c-bg-card);
+            border: 1px solid var(--c-border);
+            border-radius: var(--r-md);
+            text-decoration: none;
+            transition: all var(--t-fast);
+        }
+        .pdf-card:hover {
+            border-color: var(--c-gold);
+            transform: translateY(-2px);
+        }
+        .pdf-card .pdf-icon { font-size: 1.3rem; }
+        .pdf-card span {
+            font-size: 0.88rem;
+            color: var(--c-text-muted);
+        }
+
+        .ty-footer-cta {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid var(--c-border);
+        }
+        .ty-footer-cta p {
+            color: var(--c-text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav" id="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-ygy">YGY</span>
+                <span class="logo-divider"></span>
+                <span class="logo-text">GLP 30-Day System</span>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Thank You Hero -->
+        <section class="ty-hero">
+            <div class="container">
+                <div class="ty-checkmark">✓</div>
+                <h1>Thank You for Your Order! 🎉</h1>
+                <p class="lead">Your <strong>Youngevity GLP 30-Day System</strong> is on its way. You've just taken the most important step toward fixing the root cause of weight gain and reclaiming your health.</p>
+
+                <div class="ty-next-steps">
+                    <h3>📋 Your Next Steps</h3>
+                    <ol>
+                        <li>Watch for your shipping confirmation email from Youngevity</li>
+                        <li>While you wait, eliminate gluten, processed sugars, carbonated drinks, and fried foods from your kitchen</li>
+                        <li>Stock up on high-quality protein (aim for 0.5–1g per pound of body weight)</li>
+                        <li>When your system arrives, start with <strong>Phase 1 (Days 1–10)</strong> — use all three products daily</li>
+                        <li>Explore the health resources below to deepen your understanding</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Resources -->
+        <section class="resources-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Continue Your Journey</span>
+                    <h2>Valuable <span class="text-accent">Health Resources</span></h2>
+                    <p class="lead">Explore these curated resources to support your transformation and expand your knowledge of nutritional health.</p>
+                </div>
+
+                <div class="resources-grid">
+                    <a href="https://dailywithdocteam.com/" target="_blank" rel="noopener" class="resource-card">
+                        <div class="resource-card-icon">🩺</div>
+                        <h3>Daily With Doc Team</h3>
+                        <p>Join the Daily With Doc community for ongoing health education, live coaching, and nutritional guidance.</p>
+                        <span class="resource-url">dailywithdocteam.com →</span>
+                    </a>
+
+                    <a href="https://triangleofdisease.com/" target="_blank" rel="noopener" class="resource-card">
+                        <div class="resource-card-icon">🔺</div>
+                        <h3>Triangle of Disease</h3>
+                        <p>Understand the connection between nutritional deficiency, disease, and how to break the cycle permanently.</p>
+                        <span class="resource-url">triangleofdisease.com →</span>
+                    </a>
+
+                    <a href="https://bonesplus.com/" target="_blank" rel="noopener" class="resource-card">
+                        <div class="resource-card-icon">🦴</div>
+                        <h3>Bones Plus</h3>
+                        <p>Discover how to support strong bones and structural health through proper mineral supplementation.</p>
+                        <span class="resource-url">bonesplus.com →</span>
+                    </a>
+
+                    <a href="https://clearbrainfog.com/" target="_blank" rel="noopener" class="resource-card">
+                        <div class="resource-card-icon">🧠</div>
+                        <h3>Clear Brain Fog</h3>
+                        <p>Learn how nutritional deficiency affects cognitive function and how to restore mental clarity naturally.</p>
+                        <span class="resource-url">clearbrainfog.com →</span>
+                    </a>
+
+                    <a href="https://discoverselenium.com/" target="_blank" rel="noopener" class="resource-card">
+                        <div class="resource-card-icon">⚗️</div>
+                        <h3>Discover Selenium</h3>
+                        <p>Explore the vital role of selenium in thyroid function, immunity, and cellular protection.</p>
+                        <span class="resource-url">discoverselenium.com →</span>
+                    </a>
+
+                    <a href="https://efasupplements.com/" target="_blank" rel="noopener" class="resource-card">
+                        <div class="resource-card-icon">🐟</div>
+                        <h3>EFA Supplements</h3>
+                        <p>Essential fatty acids are critical for brain health, inflammation control, and hormonal balance.</p>
+                        <span class="resource-url">efasupplements.com →</span>
+                    </a>
+
+                    <a href="https://fucoidanlife.com/" target="_blank" rel="noopener" class="resource-card">
+                        <div class="resource-card-icon">🌊</div>
+                        <h3>Fucoidan Life</h3>
+                        <p>Discover the powerful health benefits of fucoidan — a unique compound from ocean-sourced nutrients.</p>
+                        <span class="resource-url">fucoidanlife.com →</span>
+                    </a>
+
+                    <a href="https://managestressnaturally.com/" target="_blank" rel="noopener" class="resource-card">
+                        <div class="resource-card-icon">🧘</div>
+                        <h3>Manage Stress Naturally</h3>
+                        <p>Learn how to reduce cortisol and manage stress through nutrition — a key factor in fat loss.</p>
+                        <span class="resource-url">managestressnaturally.com →</span>
+                    </a>
+
+                    <a href="https://propowerdrink.com/" target="_blank" rel="noopener" class="resource-card">
+                        <div class="resource-card-icon">⚡</div>
+                        <h3>Pro Power Drink</h3>
+                        <p>High-performance nutrition for energy, vitality, and daily performance support.</p>
+                        <span class="resource-url">propowerdrink.com →</span>
+                    </a>
+
+                    <a href="https://tangytangerineliving.com/" target="_blank" rel="noopener" class="resource-card">
+                        <div class="resource-card-icon">🍊</div>
+                        <h3>Tangy Tangerine Living</h3>
+                        <p>The flagship daily supplement delivering the 90 essential nutrients your body needs.</p>
+                        <span class="resource-url">tangytangerineliving.com →</span>
+                    </a>
+
+                    <a href="https://topshelfcollagen.com/" target="_blank" rel="noopener" class="resource-card">
+                        <div class="resource-card-icon">✨</div>
+                        <h3>Top Shelf Collagen</h3>
+                        <p>Support skin, joints, and connective tissue with premium collagen supplementation.</p>
+                        <span class="resource-url">topshelfcollagen.com →</span>
+                    </a>
+
+                    <a href="https://naturalmenopausehope.com/" target="_blank" rel="noopener" class="resource-card">
+                        <div class="resource-card-icon">🌸</div>
+                        <h3>Natural Menopause Hope</h3>
+                        <p>Natural support and nutritional strategies for managing menopause symptoms and hormonal balance.</p>
+                        <span class="resource-url">naturalmenopausehope.com →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product PDFs -->
+        <section class="pdf-section">
+            <div class="container">
+                <div class="section-header">
+                    <h3>📄 Product Information Sheets</h3>
+                </div>
+                <div class="pdf-grid">
+                    <a href="https://rootnotfruit.youngevity.com/media/catalog/product/attachment/GLP_Trifold-0925-2-DIGITAL.pdf" target="_blank" rel="noopener" class="pdf-card">
+                        <span class="pdf-icon">📋</span>
+                        <span>GLP System Trifold</span>
+                    </a>
+                    <a href="https://rootnotfruit.youngevity.com/media/catalog/product/attachment/GLP_Elevate_Info_Sheet.pdf" target="_blank" rel="noopener" class="pdf-card">
+                        <span class="pdf-icon">📋</span>
+                        <span>Elevate Info Sheet</span>
+                    </a>
+                    <a href="https://rootnotfruit.youngevity.com/media/catalog/product/attachment/GLP_Activate_Info_Sheet.pdf" target="_blank" rel="noopener" class="pdf-card">
+                        <span class="pdf-icon">📋</span>
+                        <span>Activate Info Sheet</span>
+                    </a>
+                    <a href="https://rootnotfruit.youngevity.com/media/catalog/product/attachment/GLP_Info_Sheets.pdf" target="_blank" rel="noopener" class="pdf-card">
+                        <span class="pdf-icon">📋</span>
+                        <span>Complete Info Sheets</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer CTA -->
+        <section class="ty-footer-cta">
+            <div class="container">
+                <p>Questions about your order or need coaching support?</p>
+                <p style="font-size: 1.1rem;">📞 <a href="tel:8558352777" style="color: var(--c-gold); font-weight: 600; font-family: var(--f-heading);">855.835.2777</a></p>
+                <a href="index.html" class="btn btn-outline" style="margin-top: 1rem;">← Back to GLP 30-Day System</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-legal">
+                <a href="#" class="legal-link" data-legal="privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+                <span class="legal-divider">|</span>
+                <a href="#" class="legal-link" data-legal="terms-of-use" target="_blank" rel="noopener">Terms of Use</a>
+                <span class="legal-divider">|</span>
+                <a href="#" class="legal-link" data-legal="youngevity-data-protection-policy" target="_blank" rel="noopener">Data Protection Policy</a>
+            </div>
+            <div class="footer-disclaimer">
+                <p>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="copyright-year"></span> Youngevity International, Inc. All rights reserved.</p>
+                <p class="footer-distributor">Authorized Independent Youngevity Distributor — ID: <span id="footer-distributor-id"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
